@@ -110,7 +110,7 @@ csrf token rejects (403 forbidden) any request where the tokens dont mathc (it a
 
 ## Resources used
 
-- [Backend from First Principles](https://www.youtube.com/) (videos 2–6)
+- [Backend from First Principles]([https://www.youtube.com/](https://www.youtube.com/playlist?list=PLui3EUkuMTPgZcV0QhQrOcwMPcBCcd_Q1)) (videos 2–6)
 - [MDN: Web standards](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards)
 - [Django polls tutorial](https://docs.djangoproject.com/en/stable/intro/tutorial01/)
 - [Django documentation](https://docs.djangoproject.com/)
