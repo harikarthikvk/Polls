@@ -65,11 +65,11 @@ python manage.py test polls
 # How the Web Works
 
 ## 1. What actually happens, step by step, when you type a URL into your browser and hit Enter?
-url is parsed into diff parts -> DNS lookup of domain to retrive the ip of the server -> 3 way connection with the server using tcp -> tls handshake for https -> http request -> server processes the requests and https response comes back -> browser renders the page
+url is parsed into diff parts -> DNS lookup of domain to retrive the ip of the server -> 3 way connection with the server using tcp -> tls handshake for https -> http request -> server processes the requests and http response comes back -> browser renders the page
 
 
 ## 2. What are the client and the server, and how do they talk to each other?
-client is something that asks for something and server is something that processes the request of client . client sends https request and server answers thru http response. tls encrypts it for https and these travel over tcp.
+client is something that asks for something and server is something that processes the request of client . client sends http request and server answers thru http response. tls encrypts it for https and these travel over tcp.
 
 
 ## 3. What is HTTP? What's inside a request and a response?
@@ -95,15 +95,15 @@ post method is used to send data that changes something. and the data goes into 
 
 ## 7. How does a website remember who you are between pages? (Cookies and sessions)
 websites use session tokens and cookies . session is stored on the server and is indentified by a random session id. cookie are small key value pair that hte server asks the browser to store using set-cookie header. after that the browser sends the cookie back on every request to the same site.
-
+cookie store the session id and server uses that to identify u. 
 
 ## 8. In Django, how does a request travel through URLs, views, models and templates before a response comes back?
 request -> server -> django -> middleware -> url routing -> view - > model - > template -> responser
 (MTV model template view)
 
 ## 9. Why did the tutorial add `{% csrf_token %}` to the voting form?
-this was added to prevent against cross site request forgery. which is when go to some site and that site can auto submit a post from to that site. ur browser would add attach ur sessio ncookie and hte site will assume it is u
-csrf token rejects (403 forbidden) any request where the tokens dont mathc (it adds a hidden inputwit ha secret key whch also lives on th edjango CsrfViewMiddleware)
+this was added to prevent against cross site request forgery. which is when go to some site and that site can auto submit a from to that real site. ur browser would add attach ur sessio ncookie and hte site will assume it is u
+csrf token rejects (403 forbidden) any request where the tokens dont mathc (it adds a hidden input with a secret key in hte cokie whch also lives on th edjango CsrfViewMiddleware)
 
 ---
 
